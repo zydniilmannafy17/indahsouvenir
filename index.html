@@ -140,62 +140,226 @@
       </nav>
     </header>
 
-    <section
-      id="home"
-      class="hero py-20 md:py-32 text-center bg-secondary border-b border-secondary flex flex-col justify-center"
-      style="min-height: calc(100vh - 72px)"
-    >
-      <div class="max-w-4xl mx-auto px-6">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-none">
-          Undangan Digital Modern untuk
-          <span class="text-gradient"> Momen Spesial </span>
-        </h1>
-        <p class="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto">
-          Ciptakan kesan pertama yang elegan dengan undangan digital berbasis
-          website yang mudah dibagikan dan dapat diakses kapan saja.
-        </p>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weddinginvitee Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-        <a
-          href="#tema"
-          class="btn inline-block px-12 py-4 text-lg text-white bg-primary rounded shadow-lg hover:bg-primary transition duration-300 transform hover:scale-105"
-        >
-          Lihat Tema Undangan
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* --- Navbar --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-small {
+            font-size: 10px;
+            color: #666;
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #5a7c8f; /* Warna biru keabu-abuan sesuai gambar */
+        }
+
+        .btn-whatsapp {
+            background-color: #6b8c9e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            /* Placeholder image pernikahan & kastil */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            max-width: 90%;
+            opacity: 0.9;
+        }
+
+        .btn-catalog {
+            background-color: white;
+            color: #5a7c8f;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            gap: 8px;
+        }
+
+        /* --- Stats Section --- */
+        .stats-container {
+            display: flex;
+            gap: 15px;
+            padding: 30px 20px;
+            justify-content: center;
+        }
+
+        .stat-card {
+            background: white;
+            border: 2px solid #5a7c8f;
+            border-radius: 10px;
+            padding: 20px 10px;
+            text-align: center;
+            flex: 1;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 28px;
+            font-weight: 800;
+            color: #5a7c8f;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* --- Footer / Testimonial Title --- */
+        .happy-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .happy-section h3 {
+            color: #444;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .avatar-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            overflow-x: hidden; /* Sembunyikan scrollbar untuk demo */
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive adjustments for bigger screens */
+        @media (min-width: 768px) {
+            .hero { height: 500px; padding: 0 100px; }
+            .stats-container { max-width: 800px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-small">AMZ.ID</div>
+            <span class="brand-name">Weddinginvitee</span>
+        </div>
+        <a href="#" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
-      </div>
+    </header>
+
+    <section class="hero">
+        <h1>Jasa Undangan<br>Website</h1>
+        <p>Halo calon Pengantin!<br>
+        Ayo Buat undangan website pernikahan kamu jadi lebih Berkesan Modern Aesthetic dan Kekinian</p>
+        
+        <a href="#" class="btn-catalog">
+            Lihat Katalog <i class="fas fa-th"></i>
+        </a>
     </section>
 
-    <section id="problem" class="py-16 md:py-24">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center">
-          Membuat undangan cetak membutuhkan waktu, biaya, dan sulit dibagikan
-          ke tamu yang jauh.
-          <span class="text-gradient">Undangan digital</span> memudahkan Anda
-          menyebarkan informasi acara hanya dengan satu tautan.
-        </h2>
-      </div>
+    <section class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number">7,000</span>
+            <span class="stat-label">Undangan Dibuat</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">23,845</span>
+            <span class="stat-label">Undangan Tersebar</span>
+        </div>
     </section>
 
-    <section
-      id="solusi"
-      class="py-16 bg-secondary border-t border-b border-secondary"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-16 max-w-4xl mx-auto">
-          <span class="text-gradient">Indah Souvenir</span> menyediakan
-          berbagai fitur untuk mendukung acara Anda dari A-Z:
-        </h2>
-
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
-          <!-- Fitur 1 -->
-          <div
-            class="bg-card p-8 rounded shadow-lg hover:shadow-2xl transition duration-300"
-          >
-            <div
-              class="size-16 text-3xl flex-none flex items-center justify-center bg-primary rounded-full mb-3"
-            >
-              <i class="hgi hgi-stroke hgi-web-design-01"></i>
-            </div>
-
+    <section class="happy-section">
+        <h3>Mereka Yang Sudah Bahagia</h3>
+        <div class="avatar-row">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Couple 1" class="avatar">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Couple 2" class="avatar">
+            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Couple 3" class="avatar">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Couple 4" class="avatar">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Couple 5" class="avatar">
+        </div>
+    </section>
+  
             <h3 class="text-2xl font-bold mb-3">Desain Tema Elegan</h3>
             <p class="opacity-90">
               Tersedia lebih dari 500+ tema modern, adat, classic, dan berbagai
